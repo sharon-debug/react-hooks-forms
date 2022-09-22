@@ -1,16 +1,20 @@
+// src/components/ParentComponent
 import React, { useState } from "react";
+import Form from "./Form";
+import DisplayData from "./DisplayData";
 
-function Form() {
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Henry");
-
+function ParentComponent() {
+  // ...
   return (
-    <form>
-      <input type="text" value={firstName} />
-      <input type="text" value={lastName} />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <Form
+        firstName={firstName}
+        lastName={lastName}
+        handleFirstNameChange={handleFirstNameChange}
+        handleLastNameChange={handleLastNameChange}
+      />
+      <DisplayData firstName={firstName} lastName={lastName} />
+    </div>
   );
 }
-
 export default Form;
